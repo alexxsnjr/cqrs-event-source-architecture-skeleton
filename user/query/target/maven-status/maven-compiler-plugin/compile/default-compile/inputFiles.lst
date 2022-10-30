@@ -1,0 +1,13 @@
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/infrastructure/persistence/UserEntity.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/infrastructure/persistence/UserSpringRepository.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/infrastructure/persistence/MySqlUserRepository.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/domain/User.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/domain/UserRepository.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/infrastructure/consumer/UserCreatedEventConsumer.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/infrastructure/consumer/UserDeletedEventConsumer.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/application/UserMailChangedEventHandler.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/App.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/application/UserDeletedEventHandler.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/infrastructure/mapper/UserMapper.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/infrastructure/consumer/UserMailChangedEventConsumer.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/query/src/main/java/com/alexxsnjr/cqrseventsource/user/application/UserCreatedEventHandler.java
