@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class DeleteUserCommandHandler implements CommandHandler<ChangeUserMailCommand> {
+public class DeleteUserCommandHandler implements CommandHandler<DeleteUserCommand> {
 
     private final UserCreator creator;
     private final UserFinder finder;
 
     @Override
-    public void handle(ChangeUserMailCommand command) {
+    public void handle(DeleteUserCommand command) {
         UserId userId = UserId.builder().value(command.getId()).build();
         var user = finder.getById(userId);
         user.deleteUser();

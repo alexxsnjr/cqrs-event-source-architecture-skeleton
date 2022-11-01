@@ -147,3 +147,7 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
+
+*.lst
+*.jar*

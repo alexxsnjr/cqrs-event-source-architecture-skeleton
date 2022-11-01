@@ -9,13 +9,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Builder
-@Document(collation = "eventStore")
+@Document(collection = "eventStore")
 public class EventModel {
 
     @Id
     private String id;
     private Date timeStamp;
-    private String aggregateId;
+    private String aggregateIdentifier;
     private String aggregateType;
     private int version;
     private String eventType;

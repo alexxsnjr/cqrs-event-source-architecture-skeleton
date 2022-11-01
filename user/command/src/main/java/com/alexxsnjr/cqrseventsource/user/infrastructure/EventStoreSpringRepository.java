@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EventStoreSpringRepository extends MongoRepository<EventModel, String> {
-    List<EventModel> findByAggregateId(String id);
+    List<EventModel> findByAggregateIdentifier(String aggregateIdentifier);
 }
 

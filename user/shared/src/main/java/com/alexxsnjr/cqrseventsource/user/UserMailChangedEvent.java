@@ -1,13 +1,15 @@
 package com.alexxsnjr.cqrseventsource.user;
 
 import com.alexxsnjr.cqrseventsource.domain.event.DomainEvent;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @Getter
-@Setter
 @SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserMailChangedEvent extends DomainEvent {
 
     private String email;

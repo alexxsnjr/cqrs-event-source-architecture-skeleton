@@ -1,6 +1,5 @@
 com/alexxsnjr/cqrseventsource/user/domain/User$UserBuilder.class
 com/alexxsnjr/cqrseventsource/user/infrastructure/consumer/UserMailChangedEventConsumer.class
-com/alexxsnjr/cqrseventsource/user/App.class
 com/alexxsnjr/cqrseventsource/user/infrastructure/persistence/UserEntity$UserEntityBuilder.class
 com/alexxsnjr/cqrseventsource/user/application/UserCreatedEventHandler.class
 com/alexxsnjr/cqrseventsource/user/infrastructure/persistence/UserSpringRepository.class
@@ -11,5 +10,6 @@ com/alexxsnjr/cqrseventsource/user/application/UserMailChangedEventHandler.class
 com/alexxsnjr/cqrseventsource/user/domain/UserRepository.class
 com/alexxsnjr/cqrseventsource/user/infrastructure/mapper/UserMapper.class
 com/alexxsnjr/cqrseventsource/user/infrastructure/consumer/UserDeletedEventConsumer.class
+com/alexxsnjr/cqrseventsource/user/QueryApp.class
 com/alexxsnjr/cqrseventsource/user/infrastructure/persistence/UserEntity.class
 com/alexxsnjr/cqrseventsource/user/domain/User.class

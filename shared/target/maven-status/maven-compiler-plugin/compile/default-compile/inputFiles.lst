@@ -1,8 +1,8 @@
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/event/EventProducer.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/infrastructure/bus/InMemoryCommandBus.java
-/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/infrastructure/bus/BusController.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/event/DomainEventConsumer.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/event/DomainEventHandler.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/infrastructure/bus/QueryBusController.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/infrastructure/bus/InMemoryQueryBus.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/error/AggregateNotFoundException.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/command/CommandHandler.java
@@ -11,6 +11,7 @@
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/query/Query.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/error/DomainException.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/command/CommandBus.java
+/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/infrastructure/bus/CommandBusController.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/query/QueryBus.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/error/QueryHandlerExecutionException.java
 /home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/shared/src/main/java/com/alexxsnjr/cqrseventsource/domain/AggregateRoot.java

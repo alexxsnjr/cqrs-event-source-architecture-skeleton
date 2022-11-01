@@ -11,7 +11,6 @@ import com.alexxsnjr.cqrseventsource.user.UserMailChangedEvent;
 import com.alexxsnjr.cqrseventsource.user.UserName;
 import com.alexxsnjr.cqrseventsource.user.UserType;
 import com.alexxsnjr.cqrseventsource.user.domain.error.InmutableEmail;
-import com.alexxsnjr.cqrseventsource.user.domain.error.UserNotDeleteable;
 import java.util.Date;
 import lombok.Builder;
 import lombok.Getter;
@@ -44,8 +43,8 @@ public class User extends AggregateRoot {
 
 
     public void changeUserMail(String email) {
-        if (!active.isActive()) {
-            throw new InmutableEmail("Email can not change");
+        if (type.equals(UserType.CUSTOMER)) {
+            throw new InmutableEmail("Email can not change if is customer type");
         }
 
         raiseEvent(UserMailChangedEvent.builder()
@@ -55,10 +54,6 @@ public class User extends AggregateRoot {
     }
 
     public void deleteUser() {
-        if (!active.isActive()) {
-            throw new UserNotDeleteable("the user cant be delete if not active");
-        }
-
         raiseEvent(UserDeletedEvent.builder()
             .aggregateId(this.userId.value())
             .build());
