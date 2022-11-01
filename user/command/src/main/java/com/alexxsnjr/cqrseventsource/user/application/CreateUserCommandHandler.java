@@ -1,6 +1,7 @@
 package com.alexxsnjr.cqrseventsource.user.application;
 
 import com.alexxsnjr.cqrseventsource.domain.command.CommandHandler;
+import com.alexxsnjr.cqrseventsource.user.UserActive;
 import com.alexxsnjr.cqrseventsource.user.UserContact;
 import com.alexxsnjr.cqrseventsource.user.UserId;
 import com.alexxsnjr.cqrseventsource.user.UserName;
@@ -37,6 +38,7 @@ public class CreateUserCommandHandler implements CommandHandler<CreateNewUserCom
                 .email(command.getEmail())
                 .phone(command.getPhone())
                 .build())
+            .active(UserActive.builder().active(true).build())
             .type(command.getUserType())
             .build();
     }

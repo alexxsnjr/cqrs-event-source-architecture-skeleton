@@ -25,11 +25,11 @@ public class MongoEventStoreRepository implements EventStoreRepository {
     @Override
     public void saveEvents(Identifier aggregateId, Iterable<DomainEvent> events,
         int expectedVersion) {
-        var eventStream = eventStoreRepository.findByAggregateIdentifier(aggregateId.value());
+        /*var eventStream = eventStoreRepository.findByAggregateId(aggregateId.value());
         if (expectedVersion != -1
             && eventStream.get(eventStream.size() - 1).getVersion() != expectedVersion) {
             throw new EventVersionNotFoundError("event version not found");
-        }
+        }*/
 
         var version = expectedVersion;
         for (var event : events) {
@@ -53,7 +53,7 @@ public class MongoEventStoreRepository implements EventStoreRepository {
 
     @Override
     public List<DomainEvent> getEvent(Identifier aggregateId) {
-        var eventStream = eventStoreRepository.findByAggregateIdentifier(aggregateId.value());
+        var eventStream = eventStoreRepository.findByAggregateId(aggregateId.value());
         if (isNull(eventStream) || eventStream.isEmpty()) {
             throw new AggregateNotFoundException("Incorrect User");
         }
