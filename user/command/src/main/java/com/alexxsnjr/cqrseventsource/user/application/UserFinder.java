@@ -6,6 +6,7 @@ import com.alexxsnjr.cqrseventsource.domain.event.DomainEvent;
 import com.alexxsnjr.cqrseventsource.domain.event.EventStoreRepository;
 import com.alexxsnjr.cqrseventsource.user.domain.User;
 import com.alexxsnjr.cqrseventsource.user.domain.error.EventVersionNotFoundError;
+import com.alexxsnjr.cqrseventsource.user.domain.error.UserNotFound;
 import java.util.Comparator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,8 @@ class UserFinder {
                 .max(Comparator.naturalOrder());
             user.setVersion(
                 latestVersion.orElseThrow(() -> new EventVersionNotFoundError("BadVersion")));
+        } else {
+            throw new UserNotFound("user not found in event store");
         }
 
         return user;
