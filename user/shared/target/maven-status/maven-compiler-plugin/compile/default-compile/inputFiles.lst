@@ -1,8 +1,0 @@
-/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/shared/src/main/java/com/alexxsnjr/cqrseventsource/user/UserMailChangedEvent.java
-/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/shared/src/main/java/com/alexxsnjr/cqrseventsource/user/UserType.java
-/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/shared/src/main/java/com/alexxsnjr/cqrseventsource/user/UserContact.java
-/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/shared/src/main/java/com/alexxsnjr/cqrseventsource/user/UserActive.java
-/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/shared/src/main/java/com/alexxsnjr/cqrseventsource/user/UserDeletedEvent.java
-/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/shared/src/main/java/com/alexxsnjr/cqrseventsource/user/UserId.java
-/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/shared/src/main/java/com/alexxsnjr/cqrseventsource/user/UserCreatedEvent.java
-/home/asax/ideaProjects/cqrs-event-source-architecture-skeleton/user/shared/src/main/java/com/alexxsnjr/cqrseventsource/user/UserName.java
