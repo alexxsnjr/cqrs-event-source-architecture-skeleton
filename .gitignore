@@ -152,3 +152,4 @@ Desktop.ini
 *.lst
 *.jar*
 */target
+*/target/*
