@@ -152,4 +152,5 @@ Desktop.ini
 *.lst
 *.jar*
 */target
-*/target/*
+*/pom.properties
+
