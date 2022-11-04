@@ -1,10 +1,11 @@
 package com.alexxsnjr.cqrseventsource.user.infrastructure.mapper;
 
-import com.alexxsnjr.cqrseventsource.user.UserId;
-import com.alexxsnjr.cqrseventsource.user.domain.User;
 import com.alexxsnjr.cqrseventsource.user.UserActive;
 import com.alexxsnjr.cqrseventsource.user.UserContact;
+import com.alexxsnjr.cqrseventsource.user.UserId;
 import com.alexxsnjr.cqrseventsource.user.UserName;
+import com.alexxsnjr.cqrseventsource.user.domain.User;
+import com.alexxsnjr.cqrseventsource.user.infrastructure.dto.UserResponse;
 import com.alexxsnjr.cqrseventsource.user.infrastructure.persistence.UserEntity;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -42,7 +43,7 @@ public class UserMapper {
         List<User> users = new ArrayList<>();
         Iterator it = userEntities.iterator();
 
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             users.add(toDomain((UserEntity) it.next()));
         }
         return users;
@@ -61,4 +62,15 @@ public class UserMapper {
             .build();
     }
 
+    public UserResponse toDto(User user) {
+        return UserResponse
+            .builder()
+            .userId(user.getId().value())
+            .email(user.getContact().getEmail())
+            .phone(user.getContact().getPhone())
+            .name(user.getName().getName())
+            .surname(user.getName().getSurname())
+            .type(user.getType())
+            .build();
+    }
 }

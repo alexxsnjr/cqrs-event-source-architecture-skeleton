@@ -1,9 +1,8 @@
 package com.alexxsnjr.cqrseventsource.infrastructure.bus;
 
 import com.alexxsnjr.cqrseventsource.domain.error.CommandHandlerNotFoundException;
-import com.alexxsnjr.cqrseventsource.domain.query.Query;
 import com.alexxsnjr.cqrseventsource.domain.error.QueryHandlerExecutionException;
-import com.alexxsnjr.cqrseventsource.domain.query.Result;
+import com.alexxsnjr.cqrseventsource.domain.query.Query;
 import com.alexxsnjr.cqrseventsource.domain.query.QueryBus;
 import com.alexxsnjr.cqrseventsource.domain.query.QueryHandler;
 import java.util.List;
@@ -31,28 +30,26 @@ public final class InMemoryQueryBus implements QueryBus {
     @PostConstruct
     public void loadImplementations() {
         Reflections reflections = new Reflections(new ConfigurationBuilder()
-                                                          .setUrls(ClasspathHelper.forPackage("com.alexxsnjr"))
-                                                          .setScanners(new SubTypesScanner())
-                                                          .filterInputsBy(new FilterBuilder().includePackage(
-                                                                  "com.alexxsnjr")));
+            .setUrls(ClasspathHelper.forPackage("com.alexxsnjr"))
+            .setScanners(new SubTypesScanner())
+            .filterInputsBy(new FilterBuilder().includePackage(
+                "com.alexxsnjr")));
 
         Set<Class<? extends QueryHandler>> subTypes = reflections.getSubTypesOf(QueryHandler.class);
         handlers = List.copyOf(subTypes);
     }
 
     @Override
-    public Result ask(Query query) throws QueryHandlerExecutionException {
-        long startTime = System.currentTimeMillis();
+    public Object ask(Query query) throws QueryHandlerExecutionException {
         val queryHandler = handlers.stream()
-                .filter(s -> s.getGenericInterfaces()[0].toString()
-                        .contains(query.getClass()
-                                          .getSimpleName()))
-                .findFirst()
-                .orElseThrow(CommandHandlerNotFoundException::new);
+            .filter(s -> s.getGenericInterfaces()[0].toString()
+                .contains(query.getClass()
+                    .getSimpleName()))
+            .findFirst()
+            .orElseThrow(CommandHandlerNotFoundException::new);
 
         val handler = context.getBean(queryHandler);
         val result = handler.handle(query);
-        long endTime = System.currentTimeMillis();
         return result;
     }
 
