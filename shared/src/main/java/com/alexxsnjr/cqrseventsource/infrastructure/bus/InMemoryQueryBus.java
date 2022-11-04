@@ -1,6 +1,6 @@
 package com.alexxsnjr.cqrseventsource.infrastructure.bus;
 
-import com.alexxsnjr.cqrseventsource.domain.error.CommandHandlerNotFoundException;
+import com.alexxsnjr.cqrseventsource.domain.error.HandlerNotFoundException;
 import com.alexxsnjr.cqrseventsource.domain.error.QueryHandlerExecutionException;
 import com.alexxsnjr.cqrseventsource.domain.query.Query;
 import com.alexxsnjr.cqrseventsource.domain.query.QueryBus;
@@ -46,7 +46,7 @@ public final class InMemoryQueryBus implements QueryBus {
                 .contains(query.getClass()
                     .getSimpleName()))
             .findFirst()
-            .orElseThrow(CommandHandlerNotFoundException::new);
+            .orElseThrow(HandlerNotFoundException::new);
 
         val handler = context.getBean(queryHandler);
         val result = handler.handle(query);

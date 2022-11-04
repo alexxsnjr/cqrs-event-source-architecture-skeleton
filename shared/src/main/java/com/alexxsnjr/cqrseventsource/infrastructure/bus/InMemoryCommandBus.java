@@ -3,7 +3,7 @@ package com.alexxsnjr.cqrseventsource.infrastructure.bus;
 import com.alexxsnjr.cqrseventsource.domain.command.Command;
 import com.alexxsnjr.cqrseventsource.domain.command.CommandBus;
 import com.alexxsnjr.cqrseventsource.domain.command.CommandHandler;
-import com.alexxsnjr.cqrseventsource.domain.error.CommandHandlerNotFoundException;
+import com.alexxsnjr.cqrseventsource.domain.error.HandlerNotFoundException;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.PostConstruct;
@@ -38,7 +38,7 @@ public final class InMemoryCommandBus implements CommandBus {
     }
 
     @Override
-    public void dispatch(Command command) throws CommandHandlerNotFoundException {
+    public void dispatch(Command command) throws HandlerNotFoundException {
         writeDebugLogs(command);
 
         val commandHandler = handlers.stream()
@@ -46,7 +46,7 @@ public final class InMemoryCommandBus implements CommandBus {
                         .contains(command.getClass()
                                 .getSimpleName()))
                 .findFirst()
-                .orElseThrow(CommandHandlerNotFoundException::new);
+                .orElseThrow(HandlerNotFoundException::new);
 
         val handler = context.getBean(commandHandler);
         handler.handle(command);
