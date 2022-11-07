@@ -5,9 +5,7 @@ import com.alexxsnjr.cqrseventsource.domain.event.DomainEventHandler;
 import com.alexxsnjr.cqrseventsource.user.UserDeletedEvent;
 import com.alexxsnjr.cqrseventsource.user.domain.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-@Service
 @RequiredArgsConstructor
 public class UserDeletedEventHandler implements DomainEventHandler<UserDeletedEvent> {
 

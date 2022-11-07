@@ -4,9 +4,7 @@ import com.alexxsnjr.cqrseventsource.domain.query.QueryHandler;
 import com.alexxsnjr.cqrseventsource.user.domain.User;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-@Service
 @RequiredArgsConstructor
 public class GetAllUserQueryHandler implements QueryHandler<GetAllUserQuery, User> {
 
