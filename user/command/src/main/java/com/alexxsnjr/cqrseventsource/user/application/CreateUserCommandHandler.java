@@ -9,11 +9,10 @@ import com.alexxsnjr.cqrseventsource.user.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
 @RequiredArgsConstructor
 public class CreateUserCommandHandler implements CommandHandler<CreateNewUserCommand> {
 
-    private final UserCreator creator;
+    private final UserEventCreator creator;
 
     @Override
     public void handle(CreateNewUserCommand command) {

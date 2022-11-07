@@ -4,7 +4,6 @@ package com.alexxsnjr.cqrseventsource.user.application;
 import com.alexxsnjr.cqrseventsource.domain.Identifier;
 import com.alexxsnjr.cqrseventsource.domain.event.DomainEvent;
 import com.alexxsnjr.cqrseventsource.domain.event.EventStoreRepository;
-import com.alexxsnjr.cqrseventsource.user.UserActive;
 import com.alexxsnjr.cqrseventsource.user.UserCreatedEvent;
 import com.alexxsnjr.cqrseventsource.user.UserId;
 import com.alexxsnjr.cqrseventsource.user.UserType;
@@ -14,11 +13,9 @@ import com.alexxsnjr.cqrseventsource.user.domain.error.UserNotFound;
 import java.util.Comparator;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-@Service
 @RequiredArgsConstructor
-class UserFinder {
+public class UserEventFinder {
 
     private final EventStoreRepository eventStore;
 

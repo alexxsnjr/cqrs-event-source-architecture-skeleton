@@ -5,9 +5,8 @@ import com.alexxsnjr.cqrseventsource.user.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
 @RequiredArgsConstructor
-public class UserCreator {
+public class UserEventCreator {
 
     private final EventStoreRepository eventStore;
 

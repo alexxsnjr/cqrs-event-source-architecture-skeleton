@@ -3,14 +3,12 @@ package com.alexxsnjr.cqrseventsource.user.application;
 import com.alexxsnjr.cqrseventsource.domain.command.CommandHandler;
 import com.alexxsnjr.cqrseventsource.user.UserId;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-@Service
 @RequiredArgsConstructor
 public class ChangeUserMailCommandHandler implements CommandHandler<ChangeUserMailCommand> {
 
-    private final UserCreator creator;
-    private final UserFinder finder;
+    private final UserEventCreator creator;
+    private final UserEventFinder finder;
 
     @Override
     public void handle(ChangeUserMailCommand command) {
